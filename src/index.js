@@ -6,6 +6,8 @@ function displayTime(event) {
     .format("dddd, MMMM D, YYYY hh:mm A");
   let tokyoTime = moment().tz("Asia/Tokyo").format("LLLL");
   let sydneyTime = moment().tz("Australia/Sydney").format("LLLL");
+  let currentLocation = moment.tz.guess();
+  let currentTime = moment.tz(`${currentLocation}`);
   if (event.target.value.length > 1) {
     if (event.target.value === "paris") {
       alert(`It is ${parisTime} in Europe/Paris`);
@@ -15,6 +17,9 @@ function displayTime(event) {
     }
     if (event.target.value === "sydney") {
       alert(`It is ${sydneyTime} in Australia/Sydney`);
+    }
+    if (event.target.value === "currentLocation") {
+      alert(`It is currently ${currentTime} in your location.`);
     }
   }
 }
