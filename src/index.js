@@ -51,7 +51,7 @@ setInterval(function displayVancouverDateAndTime(event) {
   let displayVancouver = document.querySelector("#vancouver");
   let vancouverTimeElement = displayVancouver.querySelector(".time");
   let vancouverDateElement = displayVancouver.querySelector(".date");
-  let vancouverTime = moment().tz("America/Vanvouver");
+  let vancouverTime = moment().tz("America/Vancouver");
   vancouverTimeElement.innerHTML = `${vancouverTime.format(
     "hh:mm:ss [<small>]A[</small>]"
   )}`;
