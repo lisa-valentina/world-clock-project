@@ -7,7 +7,7 @@ function displayTime(event) {
   let tokyoTime = moment().tz("Asia/Tokyo").format("LLLL");
   let sydneyTime = moment().tz("Australia/Sydney").format("LLLL");
   let currentLocation = moment.tz.guess();
-  let currentTime = moment.tz(`${currentLocation}`);
+  let currentTime = moment.tz(`${currentLocation}`).format("LLLL");
   if (event.target.value.length > 1) {
     if (event.target.value === "paris") {
       alert(`It is ${parisTime} in Europe/Paris`);
