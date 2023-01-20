@@ -6,17 +6,24 @@ body {
 }
 h1 {
   font-weight: 800;
-  margin: 10px;
+  margin: 15px;
 }
 h2 {
   margin: 0;
   padding-bottom: 2px;
 }
+img {
+  width: 100px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
 .city {
   display: flex;
   justify-content: space-between;
   border-bottom: dotted #132743;
-  padding-left: 160px;
+  padding: 10px 0px 10px 160px;
 }
 .city:last-child {
   border: none;
