@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;600;800&display=swap"
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
     />
     <link rel="stylesheet" href="src/style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
@@ -17,23 +17,35 @@
   </head>
   <body>
     <h1>World Clock</h1>
-    <div>
+    <div class="container">
       <select name="timezones" id="world-clock">
         <option value="">Choose city...</option>
+        <option value="currentLocation">Current Location</option>
         <option value="paris">Paris 🇫🇷</option>
         <option value="tokyo">Tokyo 🇯🇵</option>
         <option value="sydney">Sydney 🇦🇺</option>
-        <option value="currentLocation">Current Location</option>
       </select>
-      <h2>Auckland</h2>
-      <div>Fri. Jan. 20, 2023</div>
-      <div>02:36:34 PM</div>
-      <h2>Cape Town</h2>
-      <div>Fri. Jan. 20, 2023</div>
-      <div>02:36:34 PM</div>
-      <h2>Seattle</h2>
-      <div>Fri. Jan. 20, 2023</div>
-      <div>02:36:34 PM</div>
+      <div class="city">
+        <div>
+          <h2>Auckland</h2>
+          <div class="date">Fri. Jan. 20, 2023</div>
+        </div>
+        <div class="time">02:36:34 <span class="time-indicator">PM</span></div>
+      </div>
+      <div class="city">
+        <div>
+          <h2>Cape Town</h2>
+          <div class="date">Fri. Jan. 20, 2023</div>
+        </div>
+        <div class="time">02:36:34 <span class="time-indicator">PM</span></div>
+      </div>
+      <div class="city">
+        <div>
+          <h2>Seattle</h2>
+          <div class="date">Fri. Jan. 20, 2023</div>
+        </div>
+        <div class="time">02:36:34 <span class="time-indicator">PM</span></div>
+      </div>
     </div>
     <footer>
       This is an
@@ -42,7 +54,7 @@
         target="_blank"
         >open-source code</a
       >
-      created by Lisa Valentina Riedel and hosted by
+      created by <strong>Lisa Valentina Riedel</strong> and hosted by
       <a href="http://www.netlify.com" target="_blank">Netlify</a>
     </footer>
     <script src="src/index.js"></script>
