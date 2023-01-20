@@ -25,7 +25,7 @@ function displayTime(event) {
 let displayCity = document.querySelector("#world-clock");
 displayCity.addEventListener("change", displayTime);
 
-setInterval(function displayAucklandDateAndTime(event) {
+function displayTimesAndDates(event) {
   let displayAuckland = document.querySelector("#auckland");
   let aucklandTimeElement = displayAuckland.querySelector(".time");
   let aucklandDateElement = displayAuckland.querySelector(".date");
@@ -34,9 +34,6 @@ setInterval(function displayAucklandDateAndTime(event) {
     "hh:mm:ss [<small>]A[</small>]"
   )}`;
   aucklandDateElement.innerHTML = `${aucklandTime.format("ddd. MMM. D, YYYY")}`;
-}, 1000);
-
-setInterval(function displayCapetownDateAndTime(event) {
   let displayCapetown = document.querySelector("#capetown");
   let capetownTimeElement = displayCapetown.querySelector(".time");
   let capetownDateElement = displayCapetown.querySelector(".date");
@@ -45,9 +42,6 @@ setInterval(function displayCapetownDateAndTime(event) {
     "hh:mm:ss [<small>]A[</small>]"
   )}`;
   capetownDateElement.innerHTML = `${capetownTime.format("ddd.MMM. D, YYYY")}`;
-}, 1000);
-
-setInterval(function displayVancouverDateAndTime(event) {
   let displayVancouver = document.querySelector("#vancouver");
   let vancouverTimeElement = displayVancouver.querySelector(".time");
   let vancouverDateElement = displayVancouver.querySelector(".date");
@@ -58,4 +52,7 @@ setInterval(function displayVancouverDateAndTime(event) {
   vancouverDateElement.innerHTML = `${vancouverTime.format(
     "ddd. MMM. D, YYYY"
   )}`;
-}, 1000);
+}
+
+displayTimesAndDates();
+setInterval(displayTimesAndDates, 1000);
