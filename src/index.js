@@ -14,7 +14,7 @@ function darkMode() {
 let themeButton = document.querySelector(".dark-mode");
 themeButton.addEventListener("click", darkMode);
 
-setInterval(function displayTimesAndDates(event) {
+function displayTimesAndDates(event) {
   let displayAuckland = document.querySelector("#auckland");
   let aucklandTimeElement = displayAuckland.querySelector(".time");
   let aucklandDateElement = displayAuckland.querySelector(".date");
@@ -41,7 +41,7 @@ setInterval(function displayTimesAndDates(event) {
   vancouverDateElement.innerHTML = `${vancouverTime.format(
     "ddd. MMM. D, YYYY"
   )}`;
-}, 1000);
+}
 
 function addCityElement(event) {
   let addCityTimezone = event.target.value;
@@ -65,7 +65,6 @@ function addCityElement(event) {
 
   let selectElement = document.querySelector("#selected-city");
   if (selectElement.classList.contains("dotted-line")) {
-    selectElement.classList.remove("dotted-line");
   } else {
     selectElement.classList.add("dotted-line");
   }
@@ -75,4 +74,4 @@ let addSelectElement = document.querySelector("#world-clock");
 addSelectElement.addEventListener("change", addCityElement);
 
 displayTimesAndDates();
-//setInterval(displayTimesAndDates, 1000);
+setInterval(displayTimesAndDates, 1000);
