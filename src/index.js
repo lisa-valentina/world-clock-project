@@ -68,4 +68,4 @@ let addSelectElement = document.querySelector("#world-clock");
 addSelectElement.addEventListener("change", addCityElement);
 
 displayTimesAndDates();
-setInterval(displayTimesAndDates, 1000);
+setInterval(displayTimesAndDates, addCityElement, 1000);
