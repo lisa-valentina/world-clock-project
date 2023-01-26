@@ -34,7 +34,7 @@ img {
   display: flex;
   justify-content: space-between;
   border-bottom: dotted #132743;
-  padding: 10px 0px 10px 160px;
+  padding: 0px 0px 10px 160px;
 }
 .city:last-child {
   border: none;
