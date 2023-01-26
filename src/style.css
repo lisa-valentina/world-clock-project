@@ -4,6 +4,10 @@ body {
   font-family: "Manrope", sans-serif;
   text-align: center;
 }
+.dark-theme {
+  background: #132743;
+  color: #ffcbcb;
+}
 h1 {
   font-weight: 800;
   margin: 15px;

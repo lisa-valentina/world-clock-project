@@ -25,6 +25,22 @@ function displayTime(event) {
 let displayCity = document.querySelector("#world-clock");
 displayCity.addEventListener("change", displayTime);
 
+function darkMode() {
+  let body = document.querySelector("body");
+  if (body.classList.contains("dark-theme")) {
+    body.classList.remove("dark-theme");
+  } else {
+    body.classList.add("dark-theme");
+  }
+  if (div.container.classList.contains("dark-theme")) {
+    div.container.classList.remove("dark-theme");
+  } else {
+    div.container.classList.add("dark-theme");
+  }
+}
+let themeButton = document.querySelector(".dark-mode");
+themeButton.addEventListener("click", darkMode);
+
 function displayTimesAndDates(event) {
   let displayAuckland = document.querySelector("#auckland");
   let aucklandTimeElement = displayAuckland.querySelector(".time");
@@ -53,6 +69,24 @@ function displayTimesAndDates(event) {
     "ddd. MMM. D, YYYY"
   )}`;
 }
+
+function addCityElement(event) {
+  let addCityTimezone = event.target.value;
+  let addCityName = addCityTimezone.replace("_", " ").split("/")[1];
+  let addCityTime = moment().tz(addCityTimezone);
+  let addCityElement = document.querySelector("#selected-city");
+  addCityElement.innerHTML = `<div>
+          <h2>${addCityName}</h2>
+          <div class="date">${addCityTime.format("ddd. MMM. D, YYYY")}</div>
+        </div>
+        <div class="time">${addCityTime.format(
+          "hh:mm:ss [<small>]A[</small>]"
+        )}</div>
+      </div>`;
+}
+
+let addSelectElement = document.querySelector("#world-clock");
+addSelectElement.addEventListener("change", addCityElement);
 
 displayTimesAndDates();
 setInterval(displayTimesAndDates, 1000);
