@@ -1,30 +1,3 @@
-function displayTime(event) {
-  let parisTime = moment()
-    .tz("Europe/Paris")
-    .format("dddd, MMMM D, YYYY hh:mm A");
-  let tokyoTime = moment().tz("Asia/Tokyo").format("LLLL");
-  let sydneyTime = moment().tz("Australia/Sydney").format("LLLL");
-  let currentLocation = moment.tz.guess();
-  let currentTime = moment.tz(`${currentLocation}`).format("LLLL");
-  if (event.target.value.length > 1) {
-    if (event.target.value === "paris") {
-      alert(`It is ${parisTime} in Europe/Paris`);
-    }
-    if (event.target.value === "tokyo") {
-      alert(`It is ${tokyoTime} in Asia/Tokyo`);
-    }
-    if (event.target.value === "sydney") {
-      alert(`It is ${sydneyTime} in Australia/Sydney`);
-    }
-    if (event.target.value === "currentLocation") {
-      alert(`It is currently ${currentTime} in your location.`);
-    }
-  }
-}
-
-let displayCity = document.querySelector("#world-clock");
-displayCity.addEventListener("change", displayTime);
-
 function darkMode() {
   let body = document.querySelector("body");
   if (body.classList.contains("dark-theme")) {
@@ -72,6 +45,9 @@ function displayTimesAndDates(event) {
 
 function addCityElement(event) {
   let addCityTimezone = event.target.value;
+  if (addCityTimezone === "currentLocation") {
+    addCityTimezone = moment.tz.guess();
+  }
   let addCityName = addCityTimezone.replace("_", " ").split("/")[1];
   let addCityTime = moment().tz(addCityTimezone);
   let addCityElement = document.querySelector("#selected-city");
