@@ -22,7 +22,14 @@ img {
   right: 0px;
   top: 0px;
 }
-
+#selected-city {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0px 10px 160px;
+}
+.dotted-line {
+  border-bottom: dotted #132743;
+}
 .city {
   display: flex;
   justify-content: space-between;
