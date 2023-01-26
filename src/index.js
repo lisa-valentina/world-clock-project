@@ -59,6 +59,9 @@ function addCityElement(event) {
           "hh:mm:ss [<small>]A[</small>]"
         )}</div>
       </div>`;
+
+  let returnElement = document.querySelector(".return");
+  returnElement.innerHTML = `<a href="/">return to main</a>`;
 }
 
 let addSelectElement = document.querySelector("#world-clock");
